@@ -1,0 +1,248 @@
+/* CSS Variables for consistent styling */
+:root {
+  /* Spacing */
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  
+  /* Border radius */
+  --radius-none: 0;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  
+  /* Typography */
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  
+  /* Colors */
+  --color-gray-900: #111827;
+  --color-gray-600: #374151;
+  --color-gray-300: #d1d5db;
+  --color-blue-500: #3b82f6;
+  --color-red-600: #dc2626;
+  --color-white: #ffffff;
+}
+
+/* Base form styles */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group-label {
+  margin: 0 0 var(--spacing-md) 0;
+  font-weight: 500;
+  color: var(--color-gray-900);
+}
+
+.form-group-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Field wrapper base styles */
+.field-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--spacing-md);
+}
+
+.field-wrapper label {
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-md);
+  color: var(--color-gray-600);
+}
+
+.field-wrapper input,
+.field-wrapper select {
+  padding: var(--spacing-sm);
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-md);
+  color: var(--color-gray-900);
+  background-color: var(--color-white);
+  transition: border-color 0.2s ease;
+}
+
+.field-wrapper input:focus,
+.field-wrapper select:focus {
+  outline: none;
+  border-color: var(--color-blue-500);
+}
+
+.field-wrapper input[aria-invalid="true"],
+.field-wrapper select[aria-invalid="true"] {
+  border-color: var(--color-red-600);
+}
+
+/* Validation messages */
+.validation-message {
+  font-size: var(--font-size-sm);
+  margin-top: var(--spacing-sm);
+}
+
+.validation-error {
+  color: var(--color-red-600);
+}
+
+/* Checkbox specific styles */
+.checkbox-wrapper .checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+  margin: 0;
+  width: auto;
+}
+
+.checkbox-wrapper label {
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Radio specific styles */
+.field-wrapper fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.field-wrapper legend {
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-md);
+  color: var(--color-gray-600);
+  font-weight: normal;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.radio-option:last-child {
+  margin-bottom: 0;
+}
+
+.radio-option input[type="radio"] {
+  margin: 0;
+  width: auto;
+}
+
+.radio-option label {
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Slider specific styles */
+.slider-wrapper .slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.slider-wrapper .slider-value {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+  font-weight: 500;
+}
+
+.slider-wrapper input[type="range"] {
+  width: 100%;
+  margin: var(--spacing-sm) 0;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.slider-bounds {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+}
+
+/* Utility classes for dynamic styling */
+
+/* Border radius utilities */
+.radius-none input, .radius-none select { border-radius: var(--radius-none); }
+.radius-sm input, .radius-sm select { border-radius: var(--radius-sm); }
+.radius-md input, .radius-md select { border-radius: var(--radius-md); }
+.radius-lg input, .radius-lg select { border-radius: var(--radius-lg); }
+
+/* Label weight utilities */
+.label-normal label { font-weight: normal; }
+.label-medium label { font-weight: 500; }
+.label-bold label { font-weight: bold; }
+
+/* Label size utilities */
+.label-size-sm label { font-size: var(--font-size-sm); }
+.label-size-md label { font-size: var(--font-size-md); }
+.label-size-lg label { font-size: var(--font-size-lg); }
+
+/* Gap utilities */
+.gap-sm label { margin-bottom: var(--spacing-sm); }
+.gap-md label { margin-bottom: var(--spacing-md); }
+.gap-lg label { margin-bottom: var(--spacing-lg); }
+
+/* Margin bottom utilities */
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+.mb-xl { margin-bottom: var(--spacing-xl); }
+
+/* Group header utilities */
+.header-size-md .form-group-label { font-size: var(--font-size-md); }
+.header-size-lg .form-group-label { font-size: var(--font-size-lg); }
+.header-size-xl .form-group-label { font-size: var(--font-size-xl); }
+
+.header-normal .form-group-label { font-weight: normal; }
+.header-medium .form-group-label { font-weight: 500; }
+.header-bold .form-group-label { font-weight: bold; }
+
+/* Group border utilities */
+.border-solid .form-group-content {
+  border: 1px solid var(--color-gray-300);
+  padding: var(--spacing-md);
+}
+
+.border-dashed .form-group-content {
+  border: 1px dashed var(--color-gray-300);
+  padding: var(--spacing-md);
+}
+
+/* Group padding utilities */
+.p-sm .form-group-content { padding: var(--spacing-sm); }
+.p-md .form-group-content { padding: var(--spacing-md); }
+.p-lg .form-group-content { padding: var(--spacing-lg); }
+
+/* Form container utilities */
+.max-w-sm { max-width: 24rem; }
+.max-w-md { max-width: 28rem; }
+.max-w-lg { max-width: 32rem; }
+.max-w-xl { max-width: 36rem; }
+.max-w-none { max-width: none; }
+
+.form-container.gap-sm { gap: var(--spacing-sm); }
+.form-container.gap-md { gap: var(--spacing-md); }
+.form-container.gap-lg { gap: var(--spacing-lg); }
+.form-container.gap-xl { gap: var(--spacing-xl); }
+
+.form-container.p-sm { padding: var(--spacing-sm); }
+.form-container.p-md { padding: var(--spacing-md); }
+.form-container.p-lg { padding: var(--spacing-lg); }
+.form-container.p-xl { padding: var(--spacing-xl); }
